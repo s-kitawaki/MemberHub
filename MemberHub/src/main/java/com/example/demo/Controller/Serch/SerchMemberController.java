@@ -39,10 +39,6 @@ public class SerchMemberController {
     	
     	errList = serchMemberService.serch(model);
     	
-    	
-
-    	
-    	
     	logger.info("serchMember一覧処理 終了");
         return "Serch/serch";
     }

@@ -1,0 +1,51 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<script src="../assets/js/color-modes.js"></script>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<meta name="generator" content="Hugo 0.112.5">
+	<title>ログイン</title>
+	<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<link th:href="@{/css/Index/Index.css}" rel="stylesheet">
+	<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script th:src="@{/js/Index/Index.js}"></script>
+	<!-- Custom styles for this template -->
+</head>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+
+	<main class="form-signin w-100 m-auto">
+		<form th:object="${userForm}" method="post">
+			<img class="mb-4" src="images/favicon.svg" alt="" width="72" height="57">
+			<h1 class="h3 mb-3 fw-normal">会員管理サイト</h1>
+
+			<div class="form-floating">
+				<input type="text" class="form-control userId" th:field="*{userId}" placeholder="">
+				<label for="floatingInput">ユーザーID</label>
+			</div>
+			<div class="form-floating">
+				<input type="password" class="form-control password" th:field="*{password}" placeholder="">
+				<label for="floatingPassword">パスワード</label>
+			</div>
+			
+			<span class="errMsgArea" style="color: red"></span>
+			
+			<div class="blank"></div>
+		</form>
+		
+		
+		<button id="loginButton" class="btn btn-primary w-100 py-2" type="submit" onclick="buttonClick()">ログイン</button>
+		
+
+	</main>
+
+</body>
+
+</html>
